@@ -55,17 +55,17 @@ int buyer(data_t *datap, char *buff)
         return (0);
     }
     if (atoi(buff) == 1) {
-        S("\nCombien en prend tu ?\n-> ");
+        S("\nCombien en prends tu ?\n-> ");
         getline(&buff, &size, stdin);
         nb = atoi(buff);
         if (datap->player.gold < 5 * nb)
-            S("\nNe m'arnaquer pas ! Vous n'avez pas assez d'argent !");
+            S("\nNe m'arnaquez pas ! Vous n'avez pas assez d'argent !");
         else {
             datap->player.gold -= (5 * nb);
             for (i = 0; datap->player.inv[i] != NULL; i++);
             datap->player.inv[i] = "Potion de soin";
             datap->player.tab_inv[i] += nb;
-            S("\nCe sont les meilleurs du village !\nA bientôt !\nVous sortez du magasins");
+            S("\nCe sont les meilleurs du village !\nA bientôt !\nVous sortez du magasin");
         }
     }
     return (0);
@@ -125,7 +125,7 @@ void comp_part_one(char *buff, data_t *datap)
         i = 1;
     }
     if (strncmp("quest", buff, 5) == 0 && i == 0) {
-        S("\n\nVous n'avez aucune quêtes, parlez au villageois !");
+        S("\n\nVous n'avez aucune quête, parlez aux villageois !");
     }
     if (strncmp("quest", buff, 5) == 0 && i == 1) {
         quet(datap, buff);

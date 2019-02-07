@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** combat.c
 ** File description:
-** 
+** Biotron
 */
 #include "../include/my.h"
 

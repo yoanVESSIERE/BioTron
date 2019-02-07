@@ -4,6 +4,7 @@
 ** File description:
 ** Biotron
 */
+
 #include "../include/my.h"
 
 int random_number(int min_num, int max_num)

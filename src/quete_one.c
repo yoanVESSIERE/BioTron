@@ -16,15 +16,15 @@ int quet(data_t *datap, char *buff)
     sleep(1);
     S("\nVous prenez le chemin menant aux montagnes où le dragon a été vu");
     sleep(1);
-    S("\n\nVous vous retrouvez à une intersection, a droite ce trouve un chemin long contournant la forêt");
-    S(" et a gauche un chemin rapide traversant directement la forêt, mais ce chemin vous angoisse...");
+    S("\n\nVous vous retrouvez à une intersection, à droite ce trouve un long chemin contournant la forêt");
+    S(" et à gauche un chemin rapide traversant directement la forêt, mais ce chemin vous angoisse...");
     sleep(1);
     S("\nQue faites vous ?");
     buff = choice(3, buff, size, "\n- Long chemin {1}", "\n- Court chemin {2}", "\n- Retour au village {3}");
     if (atoi(buff) == 3) {
-        S("\nTu ne te sens pas prêt à affronté le dragon, tu rebrousse chemin...");
+        S("\nTu ne te sens pas prêt à affronté le dragon, tu rebrousses chemin...");
         sleep(1);
-        S("\nTe revoila au village !");
+        S("\nTe revoilà au village !");
         return (0);
     }
     /*if (atoi(buff) == 1) {
