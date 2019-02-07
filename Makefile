@@ -31,7 +31,6 @@ $(NAME):	$(OBJ)
 
 clean:
 	$(RM) $(RM_TRASH)
-	make fclean -C lib/
 	cd include && $(RM) $(RM_TRASH)
 	cd src && $(RM) $(RM_TRASH)
 

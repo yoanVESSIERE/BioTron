@@ -29,9 +29,9 @@ char *choice(int nb, char *buff, size_t size, ...)
     va_list list;
     int i = 0;
     int e = 0;
-    sfMusic *music;
+    sfMusic *music = NULL;
 
-    music = sfMusic_createFromFile("../lib/song/Bits.wav");
+    music = sfMusic_createFromFile("lib/song/Bits.wav");
     va_start(list, size);
     sleep(1);
     while (e != nb) {
