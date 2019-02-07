@@ -16,7 +16,7 @@ S(" /   /\n");
 S(" \\   \\\n");
 S(" /   /\n");
 */
-#include "my.h"
+#include "include/my.h"
 
 void adventure(data_t datap, char *buff, sfMusic *music[20])
 {

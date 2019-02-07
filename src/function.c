@@ -2,9 +2,9 @@
 ** EPITECH PROJECT, 2019
 ** function.c
 ** File description:
-** 
+** Biotron
 */
-#include "my.h"
+#include "../include/my.h"
 
 int random_number(int min_num, int max_num)
 {
@@ -31,7 +31,7 @@ char *choice(int nb, char *buff, size_t size, ...)
     int e = 0;
     sfMusic *music;
 
-    music = sfMusic_createFromFile("/home/timberloft/Projet_personel_2018/song/Bits.wav");
+    music = sfMusic_createFromFile("../lib/song/Bits.wav");
     va_start(list, size);
     sleep(1);
     while (e != nb) {

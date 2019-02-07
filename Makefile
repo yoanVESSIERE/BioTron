@@ -1,28 +1,41 @@
 ##
-## EPITECH PROJECT, 2019
+## EPITECH PROJECT, 2018
 ## Makefile
 ## File description:
-## 
+## Makefile -- project
 ##
 
-SRC = main.c function.c struct.c combat.c loop.c quete_one.c
+SRC 	= 	main.c \
+			src/function.c \
+			src/struct.c \
+			src/combat.c \
+			src/loop.c \
+			src/quete_one.c
 
-OBJ = main.o function.o struct.o combat.o loop.o quete_one.o
+OBJ		=	$(SRC:.c=.o)
 
-CFLAGS = -W -Wall -Wextra
+NAME 	=	Biotron
 
-all: compi
+RM 		=	rm -f
 
-compi: $(OBJ)
-	gcc $(OBJ) -o BioTron -lncurses -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
+RM_TRASH=	*.o *~ *.gcno *.gcda libmy.a *.gch
 
-$(OBJ): $(SRC)
-	gcc $(CFLAGS) -c $(SRC)
+CFLAGS	= 	-pedantic -Wall -Wextra -W -g -O2
+
+CSFML_FLAGS = -lncurses -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	gcc $(OBJ) -o $(NAME) $(CFLAGS) $(CSFML_FLAGS)
 
 clean:
-	rm $(OBJ)
+	$(RM) $(RM_TRASH)
+	make fclean -C lib/
+	cd include && $(RM) $(RM_TRASH)
+	cd src && $(RM) $(RM_TRASH)
 
-fclean:
-	rm BioTron
+fclean: clean
+	$(RM) $(NAME)
 
-re : clean fclean all
+re: fclean all

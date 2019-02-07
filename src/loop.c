@@ -4,7 +4,7 @@
 ** File description:
 ** 
 */
-#include "my.h"
+#include "../include/my.h"
 
 int mag_mag(data_t *datap, char *buff)
 {

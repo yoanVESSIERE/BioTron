@@ -4,7 +4,7 @@
 ** File description:
 ** 
 */
-#include "my.h"
+#include "../include/my.h"
 
 perso_t struct_player(perso_t player)
 {
