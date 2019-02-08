@@ -133,7 +133,8 @@ void histoire(data_t datap, char *buff, size_t size, sfMusic *music[20])
 
 int main(void)
 {
-    char *buff = NULL;
+    Se("Bienvee airj aer ajiral er", 1, 100, CYAN, POPUP);
+    /*char *buff = NULL;
     size_t size = 200;
     perso_t player = {NULL, 0, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, 0, 0, 0, 0};
     data_t datap;
@@ -165,6 +166,6 @@ int main(void)
     getline(&buff, &size, stdin);
     strcpy(datap.player.nom, buff);
     quet(&datap, buff);
-    histoire(datap, buff, size, music);
+    histoire(datap, buff, size, music);*/
     return (0);
 }

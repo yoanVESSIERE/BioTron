@@ -34,7 +34,7 @@
 
 // state
 #define STRONG "\033[1m" // gras
-#define POPUP "\033[3m" // clignotant
+#define POPUP "\033[5m" // clignotant
 #define UNDERLINE "\033[4m" // souligné
 #define HIGHLIGHT "\033[7m" // surligné
 #define NORMAL "\033[0m" // normal
