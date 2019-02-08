@@ -33,6 +33,7 @@
 #define BLACK "\033[30m"
 
 // state
+#define HIDDEN "\e[8m"
 #define STRONG "\033[1m" // gras
 #define POPUP "\033[3m" // clignotant
 #define UNDERLINE "\033[4m" // souligné

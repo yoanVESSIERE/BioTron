@@ -30,21 +30,20 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
         state = WHITE;
     if (nb_mseconds_btw_letter == 0)
         nb_mseconds_btw_letter = 1;
-    while (str[j]) {
-        for (; str[j] != ' ' && str[j] != '\0'; j++) {
+    for (; str[j] != '\0'; j++) {
+        if (str[j] == ' ') {
+            my_putchar(' ');
+            sleep(nb_seconds_btw_words);
+        } else {
             S(state);
             S(color);
             my_putchar(str[j]);
             usleep(nb_mseconds_btw_letter);
         }
-        my_putchar(' ');
-        j += 1;
-        sleep(nb_seconds_btw_words);
     }
+    S(HIDDEN);
+    c = getchar();
     S(WHITE);
-    while (c != '\n') {
-        c = getchar();
-    }
 }
 
 void adventure(data_t datap, char *buff, sfMusic *music[20])
@@ -142,6 +141,7 @@ int main(void)
     monster_t monster;
     sfMusic *music[20];
 
+    Se("Bonjour mon jeune homme !", 0, 50000, BLUE, STRONG);
     music[0] = sfMusic_createFromFile("lib/song/HappyLoops/intro.wav");
     sfMusic_play(music[0]);
     sfMusic_setLoop(music[0], 1);
