@@ -30,20 +30,23 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
         state = WHITE;
     if (nb_mseconds_btw_letter == 0)
         nb_mseconds_btw_letter = 1;
+    system("setxkbmap olpc");
     for (; str[j] != '\0'; j++) {
         if (str[j] == ' ') {
             my_putchar(' ');
             sleep(nb_seconds_btw_words);
         } else {
-            S(state);
-            S(color);
+            my_putstr(state);
+            my_putstr(color);
             my_putchar(str[j]);
             usleep(nb_mseconds_btw_letter);
         }
     }
-    S(HIDDEN);
+    system("setxkbmap fr");
+    my_putstr(HIDDEN);
     c = getchar();
-    S(WHITE);
+    my_putstr(WHITE);
+    my_putstr(STRONG);
 }
 
 void adventure(data_t datap, char *buff, sfMusic *music[20])
@@ -132,8 +135,7 @@ void histoire(data_t datap, char *buff, size_t size, sfMusic *music[20])
 
 int main(void)
 {
-    Se("Bienvee airj aer ajiral er", 1, 100, CYAN, POPUP);
-    /*char *buff = NULL;
+    char *buff = NULL;
     size_t size = 200;
     perso_t player = {NULL, 0, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, 0, 0, 0, 0};
     data_t datap;
@@ -141,13 +143,10 @@ int main(void)
     weap_t weapstat;
     monster_t monster;
     sfMusic *music[20];
+    my_putstr(STRONG);
 
-<<<<<<< HEAD
-    Se("Bonjour mon jeune homme !", 0, 50000, BLUE, STRONG);
-    music[0] = sfMusic_createFromFile("lib/song/HappyLoops/intro.wav");
-=======
     music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
->>>>>>> 2b2bd2067a9946d79903e04b4b8fd47905dd9d13
+    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
     sfMusic_play(music[0]);
     sfMusic_setLoop(music[0], 1);
     weapstat = struct_weap(weapstat);
@@ -158,18 +157,18 @@ int main(void)
     datap.monster = monster;
     datap.stat = stat;
     datap.weapstat = weapstat;
-    system("clear");
+    //system("clear");
     sleep(1);
-    S("Salut toi");
+    Se("Salut toi,", 0, 50000, BLUE, UNDERLINE);
     sleep(1);
-    S(",\nTon aventure commence !!!");
+    Se("Ton aventure commence !!!", 0, 50000, BLUE, UNDERLINE);
     sleep(1);
-    S("\nMais avant tout, est tu:\n");
+    S("Mais avant tout, est tu:\n");
     buff = choice(2, buff, size, "-Un Homme {1}\n", "-Une Femme {2}\n");
     S("\nOK, et ton nom c'est ");
     getline(&buff, &size, stdin);
     strcpy(datap.player.nom, buff);
     quet(&datap, buff);
-    histoire(datap, buff, size, music);*/
+    histoire(datap, buff, size, music);
     return (0);
 }
