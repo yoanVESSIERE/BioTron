@@ -39,8 +39,11 @@ int buyer(data_t *datap, char *buff)
 
     S("\nQue fais tu ?");
     buff = choice(3, buff, size, "\n- Acheter {1}", "\n- Magie {2}","\n- Retour {3}");
-    if (atoi(buff) == 3)
+    if (atoi(buff) == 3) {
+        sleep(1);
+        S("\nVous sortez de la boutique");
         return (0);
+    }
     if (atoi(buff) == 2) {
         mag_mag(datap, buff);
         return (0);
@@ -132,12 +135,12 @@ void comp_part_one(char *buff, data_t *datap, sfMusic *music[20])
     }
     if (strncmp("market", buff, 6) == 0) {
         S("\n\nVous allez au magasins");
-        /*sfMusic_play(music[4]);*/
+        sfMusic_stop(music[3]);
+        sfMusic_play(music[4]);
         buyer(datap, buff);
-        /*sfMusic_stop(music[4]);
-        sfMusic_play(music[3]);*/
+        sfMusic_stop(music[4]);
+        sfMusic_play(music[3]);
     }
-    sfMusic_stop(music[3]);
 }
 
 void comp(char *buff, data_t *datap, sfMusic *music[20])

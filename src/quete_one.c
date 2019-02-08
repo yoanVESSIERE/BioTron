@@ -11,6 +11,8 @@ void danger(data_t *data, char *buff)
     S("Tu décide de passer par le chemin court, est-ce du courage ? Ou de l'ignorance...");
     sleep(3);
     system("clear");
+    S("Tu t'enfonce dans la forêt et petit a petit, la lumière faibli");
+    sleep(1);
     S("");
 }
 

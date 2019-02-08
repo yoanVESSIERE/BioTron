@@ -32,8 +32,8 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
         nb_mseconds_btw_letter = 1;
     while (str[j]) {
         for (; str[j] != ' ' && str[j] != '\0'; j++) {
-            S(state);
-            S(color);
+            my_putstr(state);
+            my_putstr(color);
             my_putchar(str[j]);
             usleep(nb_mseconds_btw_letter);
         }
@@ -41,7 +41,7 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
         j += 1;
         sleep(nb_seconds_btw_words);
     }
-    S(WHITE);
+    my_putstr(WHITE);
     while (c != '\n') {
         c = getchar();
     }
@@ -131,10 +131,18 @@ void histoire(data_t datap, char *buff, size_t size, sfMusic *music[20])
     eval_choice_dodo(buff, datap, music);
 }
 
+void init_music(sfMusic *music[20])
+{
+    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
+    music[1] = sfMusic_createFromFile("lib/song/Battle song/The Last Encounter (90s RPG Version) Full Loop.wav");
+    music[2] = sfMusic_createFromFile("lib/song/Ambiance song/mus_act1_spiritworld_intro_110bpm");
+    music[3] = sfMusic_createFromFile("lib/song/Ambiance song/song.wav");
+    music[4] = sfMusic_createFromFile("lib/song/Ambiance song/breakdown.wav");
+}
+
 int main(void)
 {
-    Se("Bienvee airj aer ajiral er", 1, 100, CYAN, POPUP);
-    /*char *buff = NULL;
+    char *buff = NULL;
     size_t size = 200;
     perso_t player = {NULL, 0, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, 0, 0, 0, 0};
     data_t datap;
@@ -143,7 +151,7 @@ int main(void)
     monster_t monster;
     sfMusic *music[20];
 
-    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
+    init_music(music);
     sfMusic_play(music[0]);
     sfMusic_setLoop(music[0], 1);
     weapstat = struct_weap(weapstat);
@@ -156,16 +164,16 @@ int main(void)
     datap.weapstat = weapstat;
     system("clear");
     sleep(1);
-    S("Salut toi");
+    S("Salut toi,");
     sleep(1);
-    S(",\nTon aventure commence !!!");
+    S("\nTon aventure commence !!!");
     sleep(1);
     S("\nMais avant tout, est tu:\n");
     buff = choice(2, buff, size, "-Un Homme {1}\n", "-Une Femme {2}\n");
     S("\nOK, et ton nom c'est ");
     getline(&buff, &size, stdin);
     strcpy(datap.player.nom, buff);
-    quet(&datap, buff);
-    histoire(datap, buff, size, music);*/
+    //quet(&datap, buff);
+    histoire(datap, buff, size, music);
     return (0);
 }

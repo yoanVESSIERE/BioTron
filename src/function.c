@@ -37,7 +37,7 @@ char *choice(int nb, char *buff, size_t size, ...)
     sleep(1);
     while (e != nb) {
         S(va_arg(list, char *));
-        sleep(1);
+        usleep(50000);
         e++;
     }
     va_end(list);
@@ -51,7 +51,7 @@ char *choice(int nb, char *buff, size_t size, ...)
         sleep(1);
         while (e != nb) {
             S(va_arg(list, char *));
-            sleep(1);
+            usleep(50000);
             e++;
         }
         S("\nje choisis: ");
