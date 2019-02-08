@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** main.c
 ** File description:
-** 
+** Biotron
 */
 
 /*
@@ -16,7 +16,36 @@ S(" /   /\n");
 S(" \\   \\\n");
 S(" /   /\n");
 */
+
 #include "include/my.h"
+
+void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state)
+{
+    char c;
+    int j = 0;
+
+    if (color == NULL)
+        color = WHITE;
+    if (state == NULL)
+        state = WHITE;
+    if (nb_mseconds_btw_letter == 0)
+        nb_mseconds_btw_letter = 1;
+    while (str[j]) {
+        for (; str[j] != ' ' && str[j] != '\0'; j++) {
+            S(state);
+            S(color);
+            my_putchar(str[j]);
+            usleep(nb_mseconds_btw_letter);
+        }
+        my_putchar(' ');
+        j += 1;
+        sleep(nb_seconds_btw_words);
+    }
+    S(WHITE);
+    while (c != '\n') {
+        c = getchar();
+    }
+}
 
 void adventure(data_t datap, char *buff, sfMusic *music[20])
 {
@@ -63,12 +92,12 @@ void eval_choice_dodo(char *buff, data_t datap, sfMusic *music[20])
     size_t size = 500;
 
     for (; atoi(buff) == 1; a++) {
-        S("\nTu décide de te rendormir parceque le sommeil bah c'est cool\n\n");
-        S("Le lendemain tu te reveille, que fais tu ?\n");
+        S("\nTu décides de te rendormir parce que le sommeil bah c'est cool\n\n");
+        S("Le lendemain tu te réveilles, que fais tu ?\n");
         buff = choice(2, buff, size, "-Je me rendors {1}", "\n-Je me lève {2}");
         if (a == 4) {
-            S("Lorsque tu te réveille, ton village est en feu, les monstres l'ont");
-            S(" envahi car personne n'as pu les battre et tu meurs brulé...pfff la honte\n");
+            S("Lorsque tu te réveilles, ton village est en feu, les monstres l'ont");
+            S(" envahi car personne n'a pu les battre et tu meurs brulé...pfff la honte\n");
             exit(0);
         }
     }
@@ -135,7 +164,7 @@ int main(void)
     S("\nOK, et ton nom c'est ");
     getline(&buff, &size, stdin);
     strcpy(datap.player.nom, buff);
-    //quet(&datap, buff);
+    quet(&datap, buff);
     histoire(datap, buff, size, music);
     return (0);
 }

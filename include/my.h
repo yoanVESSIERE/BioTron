@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** include/../include/my.h
 ** File description:
-** 
+** Biotron
 */
 
 #include <stdlib.h>
@@ -18,9 +18,26 @@
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Window.h>
-#include <SFML/Graphics/Image.h>
-#include <SFML/Graphics/Color.h>
+
 #define S my_putstr
+
+
+// color
+#define RED "\033[31m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
+#define PURPLE "\033[35m"
+#define GREEN "\033[32m"
+#define WHITE "\033[0m"
+#define BLACK "\033[30m"
+
+// state
+#define STRONG "\033[1m" // gras
+#define POPUP "\033[3m" // clignotant
+#define UNDERLINE "\033[4m" // souligné
+#define HIGHLIGHT "\033[7m" // surligné
+#define NORMAL "\033[0m" // normal
 
 void my_putchar(char c);
 

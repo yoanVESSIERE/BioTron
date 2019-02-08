@@ -20,7 +20,7 @@ RM 		=	rm -f
 
 RM_TRASH=	*.o *~ *.gcno *.gcda libmy.a *.gch
 
-CFLAGS	= 	-pedantic -Wall -Wextra -W -g -O2
+CFLAGS	= 	-pedantic -Wall -Wextra -W -g
 
 CSFML_FLAGS = -lncurses -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
