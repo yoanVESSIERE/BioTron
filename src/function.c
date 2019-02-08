@@ -95,3 +95,15 @@ int my_put_nbr(int nb)
     my_putchar(nb % 10 + '0');
     return (0);
 }
+
+void one_by_one(char *str)
+{
+    int i = 0;
+    int nb = 0;
+
+    for (nb = 0; str[nb] != '\0'; nb++);
+    for (i = 0; i != nb + 1; i++) {
+        write(1, &str[i], 1);
+        usleep(30000);
+    }
+}

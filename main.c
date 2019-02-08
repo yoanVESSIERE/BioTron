@@ -143,7 +143,7 @@ int main(void)
     monster_t monster;
     sfMusic *music[20];
 
-    music[0] = sfMusic_createFromFile("lib/song/HappyLoops/intro.wav");
+    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
     sfMusic_play(music[0]);
     sfMusic_setLoop(music[0], 1);
     weapstat = struct_weap(weapstat);
