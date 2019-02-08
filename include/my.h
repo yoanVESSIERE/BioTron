@@ -18,8 +18,9 @@
 #include <SFML/Graphics.h>
 #include <SFML/System.h>
 #include <SFML/Window.h>
-
-#define S my_putstr
+#include <SFML/Graphics/Image.h>
+#include <SFML/Graphics/Color.h>
+#define S one_by_one
 
 
 // color
@@ -35,7 +36,7 @@
 // state
 #define HIDDEN "\e[8m"
 #define STRONG "\033[1m" // gras
-#define POPUP "\033[3m" // clignotant
+#define POPUP "\033[5m" // clignotant
 #define UNDERLINE "\033[4m" // souligné
 #define HIGHLIGHT "\033[7m" // surligné
 #define NORMAL "\033[0m" // normal
@@ -112,8 +113,10 @@ void combat_slime(data_t datap, char *buff, sfMusic *music[20]);
 
 void fin_combat(char *buff, data_t datap, sfMusic *music[20]);
 
-void boucle(char *buff, data_t datap);
+void boucle(char *buff, data_t datap, sfMusic *music[20]);
 
 int random_number(int min_num, int max_num);
 
 int quet(data_t *datap, char *buff);
+
+void one_by_one(char *str);

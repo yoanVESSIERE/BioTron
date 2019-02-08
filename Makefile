@@ -14,15 +14,19 @@ SRC 	= 	main.c \
 
 OBJ		=	$(SRC:.c=.o)
 
-NAME 	=	Biotron
+NAME 	=	BioTron
 
 RM 		=	rm -f
 
 RM_TRASH=	*.o *~ *.gcno *.gcda libmy.a *.gch
 
+<<<<<<< HEAD
 CFLAGS	= 	-pedantic -Wall -Wextra -W -g
+=======
+CFLAGS	= 	 -Wall -Wextra -W
+>>>>>>> origin/yoan
 
-CSFML_FLAGS = -lncurses -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
+CSFML_FLAGS = -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 all:	$(NAME)
 
