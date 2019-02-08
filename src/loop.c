@@ -71,7 +71,7 @@ int buyer(data_t *datap, char *buff)
     return (0);
 }
 
-void comp_part_one(char *buff, data_t *datap)
+void comp_part_one(char *buff, data_t *datap, sfMusic *music[20])
 {
     static int i = 0;
 
@@ -132,22 +132,26 @@ void comp_part_one(char *buff, data_t *datap)
     }
     if (strncmp("market", buff, 6) == 0) {
         S("\n\nVous allez au magasins");
+        /*sfMusic_play(music[4]);*/
         buyer(datap, buff);
+        /*sfMusic_stop(music[4]);
+        sfMusic_play(music[3]);*/
     }
+    sfMusic_stop(music[3]);
 }
 
-void comp(char *buff, data_t *datap)
+void comp(char *buff, data_t *datap, sfMusic *music[20])
 {
-    comp_part_one(buff, datap);
+    comp_part_one(buff, datap, music);
 }
 
-void boucle(char *buff, data_t datap)
+void boucle(char *buff, data_t datap, sfMusic *music[20])
 {
     size_t size;
 
     while (1) {
         S("\n->");
         getline(&buff, &size, stdin);
-        comp(buff, &datap);
+        comp(buff, &datap, music);
     }
 }

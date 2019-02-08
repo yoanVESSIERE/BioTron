@@ -20,7 +20,7 @@
 #include <SFML/Window.h>
 #include <SFML/Graphics/Image.h>
 #include <SFML/Graphics/Color.h>
-#define S my_putstr
+#define S one_by_one
 
 void my_putchar(char c);
 
@@ -94,8 +94,10 @@ void combat_slime(data_t datap, char *buff, sfMusic *music[20]);
 
 void fin_combat(char *buff, data_t datap, sfMusic *music[20]);
 
-void boucle(char *buff, data_t datap);
+void boucle(char *buff, data_t datap, sfMusic *music[20]);
 
 int random_number(int min_num, int max_num);
 
 int quet(data_t *datap, char *buff);
+
+void one_by_one(char *str);
