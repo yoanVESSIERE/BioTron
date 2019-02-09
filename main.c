@@ -22,7 +22,6 @@ S(" /   /\n");
 void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state)
 {
     char c;
-    int j = 0;
 
     if (color == NULL)
         color = WHITE;
@@ -30,7 +29,7 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
         state = WHITE;
     if (nb_mseconds_btw_letter == 0)
         nb_mseconds_btw_letter = 1;
-    for (; str[j] != '\0'; j++) {
+    for (int j = 0; str[j] != '\0'; j++) {
         if (str[j] == ' ') {
             my_putchar(' ');
             sleep(nb_seconds_btw_words);
@@ -43,6 +42,7 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
     }
     S(HIDDEN);
     c = getchar();
+    (void)c;
     S(WHITE);
 }
 
@@ -132,22 +132,16 @@ void histoire(data_t datap, char *buff, size_t size, sfMusic *music[20])
 
 int main(void)
 {
-    Se("Bienvee airj aer ajiral er", 1, 100, CYAN, POPUP);
-    /*char *buff = NULL;
+    char *buff = NULL;
     size_t size = 200;
     perso_t player = {NULL, 0, NULL, 0, 0, NULL, 0, NULL, NULL, NULL, 0, 0, 0, 0};
     data_t datap;
     statis_t stat;
     weap_t weapstat;
     monster_t monster;
-    sfMusic *music[20];
 
-<<<<<<< HEAD
-    Se("Bonjour mon jeune homme !", 0, 50000, BLUE, STRONG);
-    music[0] = sfMusic_createFromFile("lib/song/HappyLoops/intro.wav");
-=======
+    sfMusic *music[20];
     music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
->>>>>>> 2b2bd2067a9946d79903e04b4b8fd47905dd9d13
     sfMusic_play(music[0]);
     sfMusic_setLoop(music[0], 1);
     weapstat = struct_weap(weapstat);
@@ -170,6 +164,6 @@ int main(void)
     getline(&buff, &size, stdin);
     strcpy(datap.player.nom, buff);
     quet(&datap, buff);
-    histoire(datap, buff, size, music);*/
+    histoire(datap, buff, size, music);
     return (0);
 }
