@@ -19,7 +19,7 @@ S(" /   /\n");
 
 #include "include/my.h"
 
-void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state)
+void style_print(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state)
 {
     char c;
 
@@ -29,13 +29,13 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
         state = WHITE;
     if (nb_mseconds_btw_letter == 0)
         nb_mseconds_btw_letter = 1;
+    S(state);
+    S(color);
     for (int j = 0; str[j] != '\0'; j++) {
         if (str[j] == ' ') {
             my_putchar(' ');
             sleep(nb_seconds_btw_words);
         } else {
-            S(state);
-            S(color);
             my_putchar(str[j]);
             usleep(nb_mseconds_btw_letter);
         }
@@ -43,7 +43,7 @@ void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, cha
     S(HIDDEN);
     c = getchar();
     (void)c;
-    S(WHITE);
+    S(NORMAL);
 }
 
 void adventure(data_t datap, char *buff, sfMusic *music[20])
@@ -140,6 +140,7 @@ int main(void)
     weap_t weapstat;
     monster_t monster;
 
+    //Se("Vous voici dans le monde de BioTron !", 0, 100000, SLIME, STRONG);
     sfMusic *music[20];
     music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
     sfMusic_play(music[0]);
