@@ -1,6 +1,6 @@
 ## BioTron
 
-BioTron is a **Terminal game story**.
+BioTron is a **Terminal story game**.
 
 ## Getting started
 
@@ -19,3 +19,4 @@ CSFML [Download](https://www.sfml-dev.org/download/csfml/index-fr.php)
 ## Contributor
 
 * **Théo CERUTTI**
+* **Michael FABRI**
