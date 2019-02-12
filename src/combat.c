@@ -77,7 +77,6 @@ void fin_combat(char *buff, data_t datap, sfMusic *music[20])
 {
     int save = 0;
 
-    music[3] = sfMusic_createFromFile("lib/song/Ambiance song/mus_act1_spiritworld_passive_lp_110bpm");
     S("\n\nBravo !!!\nVous avez battu le Slime, vous gagnez ");
     my_put_nbr((save = random_number(datap.monster.exp_to_give, datap.monster.exp_to_give + datap.player.level)));
     datap.player.expe += save;
@@ -86,7 +85,7 @@ void fin_combat(char *buff, data_t datap, sfMusic *music[20])
     S(" Golds ainsi qu'une Âme");
     datap.player.gold += save;
     datap.player.ame += 1;
-    sleep(5);
+    sleep(6);
     system("clear");
     system("amixer set Master 6dB+");
     system("clear");
@@ -112,8 +111,6 @@ void combat_slime(data_t datap, char *buff, sfMusic *music[20])
     S("\nVous sortez et devant vous se trouve un slime\nVous ne comprenez pas ce qu'un slime fais dans le village\n");
     sleep(1);
     S("\n*Le slime engage le combat*");
-    music[1] = sfMusic_createFromFile("lib/song/Battle song/The Last Encounter (90s RPG Version) Full Loop.wav");
-    music[2] = sfMusic_createFromFile("lib/song/Ambiance song/mus_act1_spiritworld_intro_110bpm");
     sleep(3);
     sfMusic_destroy(music[0]);
     system("clear");

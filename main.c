@@ -133,6 +133,15 @@ void histoire(data_t datap, char *buff, size_t size, sfMusic *music[20])
     eval_choice_dodo(buff, datap, music);
 }
 
+void init_music(sfMusic *music[20])
+{
+    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
+    music[1] = sfMusic_createFromFile("lib/song/Battle song/The Last Encounter (90s RPG Version) Full Loop.wav");
+    music[2] = sfMusic_createFromFile("lib/song/Ambiance song/mus_act1_spiritworld_intro_110bpm");
+    music[3] = sfMusic_createFromFile("lib/song/Ambiance song/song.wav");
+    music[4] = sfMusic_createFromFile("lib/song/Ambiance song/breakdown.wav");
+}
+
 int main(void)
 {
     char *buff = NULL;
@@ -145,8 +154,7 @@ int main(void)
     sfMusic *music[20];
     my_putstr(STRONG);
 
-    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
-    music[0] = sfMusic_createFromFile("lib/song/Ambiance song/intro.wav");
+    init_music(music);
     sfMusic_play(music[0]);
     sfMusic_setLoop(music[0], 1);
     weapstat = struct_weap(weapstat);
@@ -157,7 +165,8 @@ int main(void)
     datap.monster = monster;
     datap.stat = stat;
     datap.weapstat = weapstat;
-    //system("clear");
+    //regle();
+    system("clear");
     sleep(1);
     Se("Salut toi,", 0, 50000, BLUE, UNDERLINE);
     sleep(1);
@@ -168,7 +177,7 @@ int main(void)
     S("\nOK, et ton nom c'est ");
     getline(&buff, &size, stdin);
     strcpy(datap.player.nom, buff);
-    quet(&datap, buff);
+    //quet(&datap, buff);
     histoire(datap, buff, size, music);
     return (0);
 }
