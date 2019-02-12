@@ -19,10 +19,9 @@ S(" /   /\n");
 
 #include "include/my.h"
 
-void Se(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state)
+void style_print(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state)
 {
     char c;
-    int j = 0;
 
     if (color == NULL)
         color = WHITE;

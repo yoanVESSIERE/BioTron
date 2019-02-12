@@ -22,7 +22,6 @@
 #include <SFML/Graphics/Color.h>
 #define S one_by_one
 
-
 // color
 #define RED "\033[31m"
 #define YELLOW "\033[33m"
@@ -32,6 +31,7 @@
 #define GREEN "\033[32m"
 #define WHITE "\033[0m"
 #define BLACK "\033[30m"
+#define SLIME "\e[92m"
 
 // state
 #define HIDDEN "\e[8m"
@@ -39,7 +39,7 @@
 #define POPUP "\033[5m" // clignotant
 #define UNDERLINE "\033[4m" // souligné
 #define HIGHLIGHT "\033[7m" // surligné
-#define NORMAL "\033[0m" // normal
+#define NORMAL "\e[0m" // normal
 
 void my_putchar(char c);
 
