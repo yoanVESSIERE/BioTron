@@ -21,6 +21,7 @@
 #include <SFML/Graphics/Image.h>
 #include <SFML/Graphics/Color.h>
 #define S one_by_one
+#define Se style_print
 
 // color
 #define RED "\033[31m"
@@ -120,3 +121,5 @@ int random_number(int min_num, int max_num);
 int quet(data_t *datap, char *buff);
 
 void one_by_one(char *str);
+
+void style_print(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_letter, char *color, char *state);

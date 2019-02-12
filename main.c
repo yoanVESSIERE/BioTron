@@ -30,7 +30,7 @@ void style_print(char *str, float nb_seconds_btw_words, float nb_mseconds_btw_le
     if (nb_mseconds_btw_letter == 0)
         nb_mseconds_btw_letter = 1;
     system("setxkbmap olpc");
-    for (; str[j] != '\0'; j++) {
+    for (int j = 0; str[j] != '\0'; j++) {
         if (str[j] == ' ') {
             my_putchar(' ');
             sleep(nb_seconds_btw_words);
@@ -167,9 +167,9 @@ int main(void)
     //regle();
     system("clear");
     sleep(1);
-    Se("Salut toi,", 0, 50000, BLUE, UNDERLINE);
+    style_print("Salut toi,", 0, 50000, BLUE, UNDERLINE);
     sleep(1);
-    Se("Ton aventure commence !!!", 0, 50000, BLUE, UNDERLINE);
+    style_print("Ton aventure commence !!!", 0, 50000, BLUE, UNDERLINE);
     sleep(1);
     S("Mais avant tout, est tu:\n");
     buff = choice(2, buff, size, "-Un Homme {1}\n", "-Une Femme {2}\n");
